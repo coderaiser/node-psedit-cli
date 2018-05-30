@@ -1,0 +1,55 @@
+{
+  "name": "psedit-cli",
+  "version": "1.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "kill group of processes with help of an editor",
+  "homepage": "http://github.com/coderaiser/node-psedit-cli",
+  "main": "lib/psedit-cli.js",
+  "bin": {
+    "psedit": "bin/psedit-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/node-psedit-cli.git"
+  },
+  "keywords": [
+    "edit",
+    "kill",
+    "process",
+    "group",
+    "ps",
+    "cli"
+  ],
+  "scripts": {
+    "test": "tape test/*.js",
+    "watcher": "nodemon -w test -w lib --exec",
+    "watch:test": "npm run watcher -- npm test",
+    "watch:coverage": "npm run watcher -- npm run coverage",
+    "lint": "redrun lint:*",
+    "lint:lib": "eslint lib test",
+    "lint:bin": "eslint --rule 'no-console:0' bin",
+    "wisdom": "npm run build",
+    "clean": "rimraf legacy dist",
+    "coverage": "nyc npm test",
+    "report": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "currify": "^2.0.6",
+    "fullstore": "^1.1.0",
+    "psedit": "^1.1.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.0.0",
+    "nodemon": "^1.17.1",
+    "nyc": "^12.0.1",
+    "redrun": "^6.0.1",
+    "sinon": "^5.0.3",
+    "sinon-called-with-diff": "^2.0.0",
+    "tape": "^4.5.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
