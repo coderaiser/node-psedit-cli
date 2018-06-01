@@ -8,7 +8,7 @@ const {
     writeTmpFileSync,
 } = require('..');
 
-test('renamify-cli: readdirSync', (t) => {
+test('psedit-cli: readdirSync', (t) => {
     const tmpdir = '/tmpdir';
     const writeFileSync = sinon.stub();
     const writeFile = writeTmpFileSync({
