@@ -29,14 +29,14 @@
     "lint:lib": "eslint lib test",
     "lint:bin": "eslint --rule 'no-console:0' bin",
     "wisdom": "npm run build",
-    "clean": "rimraf legacy dist",
     "coverage": "nyc npm test",
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "currify": "^2.0.6",
     "fullstore": "^1.1.0",
-    "psedit": "^1.1.0"
+    "psedit": "^1.1.0",
+    "rimraf": "^2.6.2"
   },
   "license": "MIT",
   "devDependencies": {
