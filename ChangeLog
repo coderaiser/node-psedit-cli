@@ -1,0 +1,5 @@
+2018.06.01, v1.0.1
+
+fix:
+- (package) rimraf
+
