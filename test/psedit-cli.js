@@ -1,11 +1,9 @@
 'use strict';
 
-const test = require('tape');
+const test = require('supertape');
 const stub = require('@cloudcmd/stub');
 
-const {
-    writeTmpFileSync,
-} = require('..');
+const {writeTmpFileSync} = require('..');
 
 test('psedit-cli: readdirSync', (t) => {
     const tmpdir = '/tmpdir';

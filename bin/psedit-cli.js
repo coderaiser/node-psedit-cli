@@ -6,8 +6,10 @@ const arg = process.argv
     .slice(2)
     .pop();
 
-if (/^(-v|--version)$/.test(arg))
-    return console.log(require('../package').version);
+if (/^(-v|--version)$/.test(arg)) {
+    console.log(require('../package').version);
+    process.exit();
+}
 
 const {join} = require('path');
 const {execSync} = require('child_process');
@@ -19,8 +21,8 @@ const {
 } = require('fs');
 
 const rimraf = require('rimraf');
-const currify = require('currify/legacy');
-const fullstore = require('fullstore/legacy');
+const currify = require('currify');
+const fullstore = require('fullstore');
 
 const writeTmpFileSync = require('..').writeTmpFileSync({
     readFileSync,
@@ -44,11 +46,11 @@ const filterName = currify((name, apps) => {
 
 const diffPids = currify((pidStore, pids) => psedit.diff(pidStore(), pids));
 
-const name = process.argv.slice(2)[0];
+const [name] = process.argv.slice(2);
 const tmpDir = mkdtempSync(join(tmpdir(), 'psedit'));
 
 const store = currify((pidStore, apps) => {
-    const list = psedit.getPids(apps)
+    const list = psedit.getPids(apps);
     
     pidStore(list);
     
@@ -77,9 +79,7 @@ psedit.get()
     .catch(logError);
 
 function edit(tmpFile) {
-    const {
-        EDITOR,
-    } = process.env;
+    const {EDITOR} = process.env;
     
     const editor = EDITOR || 'vim';
     
@@ -91,7 +91,7 @@ function edit(tmpFile) {
 }
 
 function read(tmpFile) {
-    return readFileSync(tmpFile, 'utf8')
+    return readFileSync(tmpFile, 'utf8');
 }
 
 function remove() {
@@ -99,6 +99,6 @@ function remove() {
 }
 
 function logError(e) {
-    error(e.message)
+    error(e.message);
 }
 

@@ -21,15 +21,14 @@
     "cli"
   ],
   "scripts": {
-    "test": "tape test/*.js",
-    "watcher": "nodemon -w test -w lib --exec",
-    "watch:test": "npm run watcher -- npm test",
-    "watch:coverage": "npm run watcher -- npm run coverage",
-    "lint": "redrun lint:*",
-    "lint:lib": "eslint lib test",
-    "lint:bin": "eslint --rule 'no-console:0' bin",
-    "coverage": "nyc npm test",
-    "report": "nyc report --reporter=text-lcov | coveralls"
+    "test": "madrun test",
+    "watcher": "madrun watcher",
+    "watch:test": "madrun watch:test",
+    "watch:coverage": "madrun watch:coverage",
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint",
+    "coverage": "madrun coverage",
+    "report": "madrun report"
   },
   "dependencies": {
     "currify": "^3.0.0",
@@ -42,12 +41,16 @@
     "@cloudcmd/stub": "^2.3.1",
     "coveralls": "^3.0.0",
     "eslint": "^6.2.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-putout": "^2.0.0",
+    "madrun": "^2.5.0",
     "nodemon": "^1.17.1",
     "nyc": "^14.1.1",
+    "putout": "^5.8.0",
     "redrun": "^7.1.5",
-    "tape": "^4.5.1"
+    "supertape": "^1.2.3"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   }
 }
