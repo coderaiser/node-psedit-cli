@@ -1,3 +1,18 @@
+2019.08.25, v2.0.0
+
+feature:
+- (psedit-cli) drop support of node < 8
+- (package) eslint v6.2.2
+- (package) rimraf v3.0.0
+- (package) redrun v7.1.5
+- (package) nyc v14.1.1
+- (package) currify v3.0.0
+- (package) psedit v2.0.0
+- (package) sinon -> @cloudcmd/stub
+- (package) eslint v5.0.0
+- (package) sinon v6.0.0
+
+
 2018.06.01, v1.0.2
 
 fix:

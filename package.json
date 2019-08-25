@@ -1,6 +1,6 @@
 {
   "name": "psedit-cli",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "kill group of processes with help of an editor",
   "homepage": "http://github.com/coderaiser/node-psedit-cli",
