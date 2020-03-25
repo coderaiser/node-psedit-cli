@@ -7,7 +7,7 @@ module.exports = {
     'watcher': () => 'nodemon -w test -w lib --exec',
     'watch:test': () => run('watcher', 'npm test'),
     'watch:coverage': () => run('watcher', 'npm run coverage'),
-    'lint': () => 'putout bin lib test madrun.js',
+    'lint': () => 'putout bin lib test .madrun.js',
     'fix:lint': () => run('lint', '--fix'),
     'coverage': () => 'nyc npm test',
     'report': () => 'nyc report --reporter=text-lcov | coveralls',
