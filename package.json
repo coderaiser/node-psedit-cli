@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "currify": "^4.0.0",
-    "fullstore": "^1.1.0",
+    "fullstore": "^3.0.0",
     "psedit": "^2.0.0",
     "rimraf": "^3.0.0"
   },
